@@ -38,7 +38,7 @@ if ! [[ "$ctid" ]]; then
 fi
 
 if [[ "$flag" != "--rsync-only" ]]; then
-    TERM=xterm lib/create-lxc-container "$lxcContainerName"
+    TERM=xterm lxc-create -n "$lxcContainerName" -t ubuntu
 fi
 
 rsync -avze ssh \
